@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Amazing Cargo Inc. | Freight & Transportation</title>
+  <meta name="description" content="Amazing Cargo Inc. provides reliable freight transportation, professional drivers, and dependable logistics solutions.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #172033;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    header {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      padding: 22px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      color: white;
+      font-size: 23px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: #3d8cff;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 28px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 130px 7% 80px;
+      color: white;
+      background:
+        linear-gradient(rgba(6, 15, 32, 0.78), rgba(6, 15, 32, 0.88)),
+        url("https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1800&q=85")
+        center/cover no-repeat;
+    }
+
+    .hero-content {
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 20px;
+      padding: 8px 14px;
+      border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 30px;
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-size: clamp(46px, 7vw, 82px);
+      line-height: 1.02;
+      margin-bottom: 24px;
+    }
+
+    .hero p {
+      max-width: 620px;
+      font-size: 19px;
+      color: #dbe5f5;
+      margin-bottom: 34px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: 0.2s;
+    }
+
+    .btn-primary {
+      background: #276ef1;
+      color: white;
+    }
+
+    .btn-secondary {
+      color: white;
+      border: 1px solid rgba(255,255,255,0.65);
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    section {
+      padding: 90px 7%;
+    }
+
+    .section-heading {
+      max-width: 700px;
+      margin-bottom: 45px;
+    }
+
+    .section-heading small {
+      color: #276ef1;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .section-heading h2 {
+      font-size: 38px;
+      margin-top: 8px;
+      line-height: 1.2;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .about-text p {
+      margin-bottom: 18px;
+      color: #566176;
+      font-size: 17px;
+    }
+
+    .about-box {
+      background: #0c1930;
+      color: white;
+      padding: 38px;
+      border-radius: 10px;
+    }
+
+    .about-box h3 {
+      margin-bottom: 18px;
+      font-size: 25px;
+    }
+
+    .about-box p {
+      color: #c8d3e4;
+    }
+
+    .services {
+      background: #f4f7fb;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      padding: 32px;
+      border-radius: 9px;
+      box-shadow: 0 10px 28px rgba(22, 35, 60, 0.07);
+    }
+
+    .card-number {
+      color: #276ef1;
+      font-size: 14px;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .card h3 {
+      margin-bottom: 12px;
+      font-size: 21px;
+    }
+
+    .card p {
+      color: #667085;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .why-item {
+      border-left: 3px solid #276ef1;
+      padding: 8px 0 8px 18px;
+    }
+
+    .why-item h3 {
+      margin-bottom: 5px;
+      font-size: 18px;
+    }
+
+    .why-item p {
+      color: #667085;
+      font-size: 14px;
+    }
+
+    .contact {
+      background: #0c1930;
+      color: white;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .contact h2 {
+      font-size: 40px;
+      margin-bottom: 16px;
+    }
+
+    .contact p {
+      color: #c7d3e5;
+      margin-bottom: 25px;
+    }
+
+    .contact-details a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      margin: 10px 0;
+      font-size: 17px;
+    }
+
+    .contact-box {
+      background: white;
+      color: #172033;
+      padding: 36px;
+      border-radius: 10px;
+    }
+
+    .contact-box h3 {
+      margin-bottom: 12px;
+    }
+
+    .contact-box p {
+      color: #667085;
+    }
+
+    footer {
+      background: #07101f;
+      color: #9eabc0;
+      padding: 24px 7%;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      font-size: 13px;
+    }
+
+    @media (max-width: 850px) {
+      nav {
+        display: none;
+      }
+
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      footer {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 520px) {
+      header {
+        padding: 20px 5%;
+      }
+
+      section,
+      .hero {
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 48px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="logo">AMAZING CARGO <span>INC.</span></div>
+
+    <nav>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#why-us">Why Us</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <div class="eyebrow">Freight • Logistics • Transportation</div>
+
+        <h1>Moving Business Forward.</h1>
+
+        <p>
+          Reliable freight transportation backed by professional communication,
+          dependable service and a commitment to every load.
+        </p>
+
+        <div class="buttons">
+          <a class="btn btn-primary" href="mailto:nikola@amazingcargoinc.com">
+            Request a Quote
+          </a>
+
+          <a class="btn btn-secondary" href="tel:+13122410973">
+            Call (312) 241-0973
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="about-grid">
+        <div class="about-text">
+          <div class="section-heading">
+            <small>About Amazing Cargo</small>
+            <h2>Transportation built on reliability and trust.</h2>
+          </div>
+
+          <p>
+            Amazing Cargo Inc. is a transportation company committed to providing
+            dependable freight solutions with a strong focus on safety,
+            communication and on-time service.
+          </p>
+
+          <p>
+            We value long-term relationships with customers, drivers and business
+            partners, and we approach every shipment with professionalism and care.
+          </p>
+        </div>
+
+        <div class="about-box">
+          <h3>Our Commitment</h3>
+          <p>
+            Clear communication, responsible transportation and dependable service
+            from pickup through final delivery.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="section-heading">
+        <small>Our Services</small>
+        <h2>Flexible transportation solutions for your business.</h2>
+      </div>
+
+      <div class="cards">
+        <div class="card">
+          <div class="card-number">01</div>
+          <h3>Freight Transportation</h3>
+          <p>
+            Reliable transportation solutions designed around your shipping needs.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-number">02</div>
+          <h3>Dedicated Freight</h3>
+          <p>
+            Consistent capacity and professional service for recurring freight.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-number">03</div>
+          <h3>Expedited Service</h3>
+          <p>
+            Responsive transportation when timing and communication matter most.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="why-us">
+      <div class="section-heading">
+        <small>Why Choose Us</small>
+        <h2>A dependable partner for every mile.</h2>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-item">
+          <h3>Professional Drivers</h3>
+          <p>Respectful, responsible and service-focused.</p>
+        </div>
+
+        <div class="why-item">
+          <h3>Clear Communication</h3>
+          <p>Responsive updates throughout transportation.</p>
+        </div>
+
+        <div class="why-item">
+          <h3>Safety Focused</h3>
+          <p>Safety remains central to every operation.</p>
+        </div>
+
+        <div class="why-item">
+          <h3>Dependable Service</h3>
+          <p>Committed to professional and timely delivery.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="contact-grid">
+        <div>
+          <h2>Let’s move your business forward.</h2>
+
+          <p>
+            Contact Amazing Cargo Inc. to discuss your transportation needs.
+          </p>
+
+          <div class="contact-details">
+            <a href="tel:+13122410973">Phone: (312) 241-0973</a>
+            <a href="mailto:nikola@amazingcargoinc.com">
+              Email: nikola@amazingcargoinc.com
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-box">
+          <h3>Amazing Cargo Inc.</h3>
+          <p>Freight • Logistics • Transportation</p>
+          <p><strong>President & CEO:</strong> Nikola Sredojevic</p>
+          <br>
+          <a class="btn btn-primary" href="mailto:nikola@amazingcargoinc.com">
+            Send an Email
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>© 2026 Amazing Cargo Inc. All rights reserved.</div>
+    <div>Moving Business Forward.</div>
+  </footer>
+
+</body>
+</html>
