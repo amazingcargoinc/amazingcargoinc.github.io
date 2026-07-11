@@ -1,15 +1,14 @@
-# Amazing Cargo Inc. Website v3.1 Bilingual
+# Amazing Cargo Inc. Website v3.2 — Bilingual Fix
 
-Changes:
-- Public email changed to office@amazingcargoinc.com
-- Built-in English / Spanish switch added to the top navigation
-- Contact form now opens an email to office@amazingcargoinc.com
-- Language preference is remembered in the visitor's browser
+This version fixes the EN / ES language switch by embedding the translation code directly into index.html.
 
-Upload these files to GitHub:
+Upload and replace:
 - index.html
 - style.css
-- script.js
 - hero-truck.png
 
-Leave CNAME untouched.
+You may also upload script.js, but the page no longer depends on it.
+
+Leave the CNAME file untouched.
+
+After committing, wait 2–5 minutes and press Ctrl + F5.
