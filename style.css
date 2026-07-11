@@ -408,3 +408,26 @@ blockquote{
   .hero-actions .button{width:100%}
   .card-grid,.mini-card-grid,.why-grid,.feature-strip,.field-row,.footer-grid{grid-template-columns:1fr}
 }
+
+
+.language-switch{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  color:var(--muted);
+  font-size:13px;
+}
+.lang-btn{
+  border:0;
+  background:transparent;
+  color:var(--muted);
+  font-weight:800;
+  cursor:pointer;
+  padding:4px 2px;
+}
+.lang-btn.active{color:var(--blue-2)}
+.lang-btn:hover{color:white}
+
+@media (max-width:980px){
+  .language-switch{padding:4px 0}
+}
