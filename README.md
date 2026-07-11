@@ -1,19 +1,20 @@
-# Amazing Cargo Inc. Website v3
+# Amazing Cargo Inc. Website v3 – Corrected
 
-Ready-to-publish static website for GitHub Pages.
+This corrected version uses a better hero image and a layout closer to the preview you liked.
 
 ## Files
 - `index.html`
 - `style.css`
 - `script.js`
-- `assets/hero-truck.png`
+- `hero-truck.png`
 
-## Upload to GitHub
-1. Open the `amazingcargoinc.github.io` repository.
+## How to upload
+1. Open your `amazingcargoinc.github.io` repository.
 2. Choose **Add file → Upload files**.
-3. Upload all files and the `assets` folder.
-4. Confirm replacement of the existing files.
+3. Upload all 4 files.
+4. Confirm replacement of the old files.
 5. Commit directly to the `main` branch.
-6. Wait 1–3 minutes and refresh `https://amazingcargoinc.com`.
+6. Wait 1–3 minutes, then refresh `https://amazingcargoinc.com`.
 
-The contact form opens the visitor's email application with the request filled in.
+## Important
+This version uses `hero-truck.png` in the root folder, so there is no assets-folder issue.

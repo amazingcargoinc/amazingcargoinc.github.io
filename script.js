@@ -1,24 +1,24 @@
-const menuButton = document.querySelector('.menu-toggle');
+const menuToggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.main-nav');
 
-menuButton?.addEventListener('click', () => {
+menuToggle?.addEventListener('click', () => {
   const open = nav.classList.toggle('open');
-  menuButton.setAttribute('aria-expanded', String(open));
+  menuToggle.setAttribute('aria-expanded', String(open));
 });
 
 document.querySelectorAll('.main-nav a').forEach(link => {
   link.addEventListener('click', () => {
     nav.classList.remove('open');
-    menuButton?.setAttribute('aria-expanded', 'false');
+    menuToggle?.setAttribute('aria-expanded', 'false');
   });
 });
 
-const form = document.querySelector('#contact-form');
+const form = document.getElementById('contact-form');
 
-form?.addEventListener('submit', event => {
+form?.addEventListener('submit', (event) => {
   event.preventDefault();
-
   const data = new FormData(form);
+
   const subject = encodeURIComponent(`Website inquiry: ${data.get('service')}`);
   const body = encodeURIComponent(
 `Name: ${data.get('name')}
