@@ -1,1 +1,1 @@
-// Translation and form code are embedded in index.html.
+// All scripts are embedded in index.html.
