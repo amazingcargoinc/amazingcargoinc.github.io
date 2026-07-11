@@ -1,14 +1,23 @@
-# Amazing Cargo Inc. Website v3.2 — Bilingual Fix
+# Amazing Cargo Inc. Website v3.4 Fixed
 
-This version fixes the EN / ES language switch by embedding the translation code directly into index.html.
+Changes:
+- Driver opportunities appear first
+- Contact dropdown order:
+  1. Company Driver - Percentage Pay
+  2. Lease-to-Purchase
+  3. Truck Lease / Rental
+  4. Freight Quote
+  5. Flatbed Freight
+  6. Dry Van Freight
+  7. Reefer Freight
+- Spanish translation fixed and embedded directly in index.html
+- Email remains office@amazingcargoinc.com
+- Displayed phone updated to +1 (312) 241-0973
 
-Upload and replace:
+Upload:
 - index.html
 - style.css
 - hero-truck.png
+- script.js
 
-You may also upload script.js, but the page no longer depends on it.
-
-Leave the CNAME file untouched.
-
-After committing, wait 2–5 minutes and press Ctrl + F5.
+Leave CNAME untouched.

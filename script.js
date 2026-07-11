@@ -1,1 +1,1 @@
-// JavaScript is embedded directly in index.html in v3.2.
+// Translation and form code are embedded in index.html.
