@@ -1,468 +1,247 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Amazing Cargo Inc. provides reliable freight transportation, professional communication, and dependable logistics solutions." />
-  <title>Amazing Cargo Inc. | Freight & Transportation</title>
-
-  <style>
-    :root{
-      --bg:#050b14;
-      --panel:#091321;
-      --panel-2:#0d1a2b;
-      --text:#f5f8fc;
-      --muted:#aab7ca;
-      --line:rgba(64,161,255,.25);
-      --blue:#2f9cff;
-      --blue-2:#72c6ff;
-      --shadow:0 20px 60px rgba(0,0,0,.34);
-    }
-
-    *{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{
-      font-family:Arial,Helvetica,sans-serif;
-      background:
-        radial-gradient(circle at 75% 10%, rgba(47,156,255,.12), transparent 28%),
-        linear-gradient(180deg,#040912 0%,#07111d 100%);
-      color:var(--text);
-      line-height:1.6;
-    }
-
-    a{color:inherit}
-    .wrap{width:min(1180px,90%);margin:auto}
-
-    header{
-      position:fixed;
-      top:0;left:0;right:0;
-      z-index:50;
-      backdrop-filter:blur(14px);
-      background:rgba(4,9,18,.76);
-      border-bottom:1px solid rgba(255,255,255,.06);
-    }
-
-    .nav{
-      min-height:74px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:24px;
-    }
-
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      text-decoration:none;
-      font-weight:800;
-      letter-spacing:1.2px;
-    }
-
-    .brand-mark{
-      width:38px;height:38px;
-      border:2px solid var(--blue);
-      transform:skew(-12deg);
-      display:grid;
-      place-items:center;
-      color:var(--blue-2);
-      box-shadow:0 0 25px rgba(47,156,255,.25);
-    }
-
-    .brand small{
-      display:block;
-      color:var(--muted);
-      font-size:10px;
-      letter-spacing:2.5px;
-      margin-top:-3px;
-    }
-
-    nav{display:flex;align-items:center;gap:28px}
-    nav a{
-      text-decoration:none;
-      font-size:14px;
-      color:#d9e4f2;
-    }
-
-    .nav-btn{
-      padding:11px 16px;
-      border:1px solid var(--blue);
-      border-radius:5px;
-      color:white;
-      background:rgba(47,156,255,.08);
-    }
-
-    .hero{
-      min-height:100vh;
-      padding:132px 0 70px;
-      display:flex;
-      align-items:center;
-      position:relative;
-      overflow:hidden;
-    }
-
-    .hero::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:
-        linear-gradient(90deg,rgba(4,9,18,.99) 0%,rgba(4,9,18,.89) 43%,rgba(4,9,18,.26) 72%,rgba(4,9,18,.58) 100%),
-        url("hero-truck.png") right center/cover no-repeat;
-      z-index:-2;
-    }
-
-    .hero::after{
-      content:"";
-      position:absolute;
-      inset:auto 0 0;
-      height:180px;
-      background:linear-gradient(transparent,var(--bg));
-      z-index:-1;
-    }
-
-    .hero-copy{max-width:680px}
-    .eyebrow{
-      color:var(--blue-2);
-      font-size:13px;
-      font-weight:800;
-      letter-spacing:2px;
-      text-transform:uppercase;
-      margin-bottom:18px;
-    }
-
-    h1{
-      font-size:clamp(50px,7vw,88px);
-      line-height:.98;
-      letter-spacing:-2.5px;
-      margin-bottom:24px;
-    }
-
-    .hero p{
-      color:#c2cede;
-      max-width:610px;
-      font-size:19px;
-      margin-bottom:34px;
-    }
-
-    .actions{display:flex;gap:14px;flex-wrap:wrap}
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:14px 22px;
-      border-radius:5px;
-      text-decoration:none;
-      font-weight:800;
-      transition:.2s ease;
-    }
-
-    .btn-primary{
-      background:linear-gradient(135deg,var(--blue),#1468e8);
-      box-shadow:0 0 28px rgba(47,156,255,.24);
-    }
-
-    .btn-secondary{
-      border:1px solid rgba(255,255,255,.35);
-      background:rgba(255,255,255,.04);
-    }
-
-    .btn:hover{transform:translateY(-2px)}
-
-    .trust-strip{
-      margin-top:-35px;
-      position:relative;
-      z-index:4;
-    }
-
-    .trust-grid{
-      background:rgba(7,16,28,.96);
-      border:1px solid var(--line);
-      box-shadow:var(--shadow);
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      border-radius:10px;
-      overflow:hidden;
-    }
-
-    .trust-item{
-      padding:28px;
-      border-right:1px solid rgba(255,255,255,.07);
-    }
-
-    .trust-item:last-child{border-right:0}
-    .trust-item strong{display:block;margin-bottom:6px}
-    .trust-item span{color:var(--muted);font-size:14px}
-
-    section{padding:100px 0}
-    .section-top{max-width:720px;margin-bottom:44px}
-    .section-top small{
-      color:var(--blue-2);
-      text-transform:uppercase;
-      font-weight:800;
-      letter-spacing:1.8px;
-    }
-    .section-top h2{
-      font-size:clamp(36px,5vw,54px);
-      line-height:1.08;
-      margin-top:10px;
-    }
-
-    .cards{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:22px;
-    }
-
-    .card{
-      background:
-        linear-gradient(180deg,rgba(255,255,255,.03),rgba(255,255,255,.01)),
-        var(--panel);
-      border:1px solid rgba(80,168,255,.18);
-      border-radius:10px;
-      padding:32px;
-      min-height:260px;
-      box-shadow:var(--shadow);
-    }
-
-    .card-num{
-      color:var(--blue);
-      font-size:13px;
-      font-weight:900;
-      letter-spacing:1.5px;
-      margin-bottom:28px;
-    }
-
-    .card h3{font-size:23px;margin-bottom:12px}
-    .card p{color:var(--muted)}
-
-    .about-grid{
-      display:grid;
-      grid-template-columns:1.1fr .9fr;
-      gap:55px;
-      align-items:center;
-    }
-
-    .about-copy p{
-      color:var(--muted);
-      font-size:17px;
-      margin-bottom:18px;
-    }
-
-    .about-panel{
-      background:linear-gradient(145deg,#0d1d31,#08111e);
-      border:1px solid var(--line);
-      border-radius:12px;
-      padding:40px;
-      box-shadow:var(--shadow);
-    }
-
-    .about-panel h3{font-size:28px;margin-bottom:14px}
-    .about-panel p{color:var(--muted)}
-
-    .contact{
-      background:
-        radial-gradient(circle at 20% 20%,rgba(47,156,255,.10),transparent 30%),
-        #07101c;
-      border-top:1px solid rgba(255,255,255,.06);
-      border-bottom:1px solid rgba(255,255,255,.06);
-    }
-
-    .contact-grid{
-      display:grid;
-      grid-template-columns:1fr auto;
-      gap:35px;
-      align-items:center;
-    }
-
-    .contact h2{font-size:clamp(36px,5vw,58px);line-height:1.05;margin-bottom:14px}
-    .contact p{color:var(--muted);max-width:660px}
-    .contact-links{margin-top:22px}
-    .contact-links a{
-      display:block;
-      text-decoration:none;
-      margin:8px 0;
-      color:white;
-    }
-
-    footer{
-      padding:30px 0;
-      color:#8f9db0;
-      font-size:13px;
-    }
-
-    .footer-row{
-      display:flex;
-      justify-content:space-between;
-      gap:20px;
-    }
-
-    @media(max-width:850px){
-      nav a:not(.nav-btn){display:none}
-      .hero::before{
-        background:
-          linear-gradient(90deg,rgba(4,9,18,.98),rgba(4,9,18,.75)),
-          url("hero-truck.png") center/cover no-repeat;
-      }
-      .trust-grid,.cards,.about-grid,.contact-grid{grid-template-columns:1fr}
-      .trust-item{border-right:0;border-bottom:1px solid rgba(255,255,255,.07)}
-      .trust-item:last-child{border-bottom:0}
-      .contact-grid{align-items:start}
-      .footer-row{flex-direction:column}
-    }
-
-    @media(max-width:520px){
-      .wrap{width:min(92%,1180px)}
-      h1{font-size:50px}
-      .hero{padding-top:120px}
-      .actions{flex-direction:column}
-      .btn{width:100%}
-      .brand-text{font-size:14px}
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Amazing Cargo Inc. provides flatbed, dry van and reefer freight transportation, plus lease-to-purchase and truck rental opportunities.">
+  <meta name="theme-color" content="#06101d">
+  <title>Amazing Cargo Inc. | Freight, Logistics & Truck Opportunities</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <header>
-    <div class="wrap nav">
-      <a class="brand" href="#home">
-        <div class="brand-mark">A</div>
-        <div class="brand-text">
-          AMAZING CARGO INC.
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home" aria-label="Amazing Cargo Inc. home">
+        <span class="brand-mark">A</span>
+        <span class="brand-copy">
+          <strong>AMAZING CARGO INC.</strong>
           <small>FREIGHT • LOGISTICS • TRANSPORTATION</small>
-        </div>
+        </span>
       </a>
 
-      <nav>
-        <a href="#about">About</a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="main-nav" class="main-nav">
         <a href="#services">Services</a>
+        <a href="#opportunities">Opportunities</a>
+        <a href="#about">About</a>
+        <a href="#why-us">Why Us</a>
         <a href="#contact">Contact</a>
-        <a class="nav-btn" href="mailto:nikola@amazingcargoinc.com">Get a Quote</a>
+        <a class="nav-call" href="tel:+13122410973">(312) 241-0973</a>
+        <a class="button button-small" href="mailto:nikola@amazingcargoinc.com?subject=Freight%20Quote%20Request">Get a Quote</a>
       </nav>
     </div>
   </header>
 
   <main id="home">
     <section class="hero">
-      <div class="wrap">
-        <div class="hero-copy">
-          <div class="eyebrow">Reliable. Efficient. Professional.</div>
-          <h1>Moving Business Forward.</h1>
-          <p>
-            Amazing Cargo Inc. provides dependable freight transportation with
-            professional communication, safety-focused operations, and a commitment
-            to every load.
-          </p>
+      <div class="hero-overlay"></div>
+      <div class="container hero-content">
+        <p class="eyebrow">Reliable. Efficient. Professional.</p>
+        <h1>Moving Business <span>Forward.</span></h1>
+        <p class="hero-lead">
+          Dependable freight transportation, professional communication and flexible
+          truck opportunities designed to help customers, drivers and owner-operators grow.
+        </p>
 
-          <div class="actions">
-            <a class="btn btn-primary" href="mailto:nikola@amazingcargoinc.com">Request a Quote</a>
-            <a class="btn btn-secondary" href="tel:+13122410973">Call (312) 241-0973</a>
-          </div>
+        <div class="hero-actions">
+          <a class="button" href="mailto:nikola@amazingcargoinc.com?subject=Freight%20Quote%20Request">Request a Quote</a>
+          <a class="button button-outline" href="tel:+13122410973">Call (312) 241-0973</a>
         </div>
       </div>
     </section>
 
-    <div class="trust-strip">
-      <div class="wrap trust-grid">
-        <div class="trust-item">
-          <strong>Safety First</strong>
-          <span>Responsible service on every mile.</span>
-        </div>
-        <div class="trust-item">
-          <strong>On-Time Delivery</strong>
-          <span>Dependable transportation and clear updates.</span>
-        </div>
-        <div class="trust-item">
-          <strong>Nationwide Service</strong>
-          <span>Transportation solutions across the United States.</span>
-        </div>
-        <div class="trust-item">
-          <strong>Professional Communication</strong>
-          <span>Responsive support from pickup to delivery.</span>
-        </div>
+    <section class="promise-strip" aria-label="Company strengths">
+      <div class="container promise-grid">
+        <article>
+          <span class="icon">✓</span>
+          <div><strong>Safety First</strong><small>Responsible operations on every mile.</small></div>
+        </article>
+        <article>
+          <span class="icon">↔</span>
+          <div><strong>Clear Communication</strong><small>Responsive updates from pickup to delivery.</small></div>
+        </article>
+        <article>
+          <span class="icon">◷</span>
+          <div><strong>Dependable Service</strong><small>Professional support when timing matters.</small></div>
+        </article>
+        <article>
+          <span class="icon">↗</span>
+          <div><strong>Growth Opportunities</strong><small>Flexible options for qualified drivers.</small></div>
+        </article>
       </div>
-    </div>
+    </section>
 
-    <section id="services">
-      <div class="wrap">
-        <div class="section-top">
-          <small>What We Do</small>
-          <h2>Transportation solutions built around your business.</h2>
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-heading center">
+          <p class="eyebrow">What We Offer</p>
+          <h2>Solutions that keep you moving</h2>
+          <p>Transportation services you can count on, backed by professionalism, communication and care.</p>
         </div>
 
-        <div class="cards">
-          <article class="card">
-            <div class="card-num">01</div>
-            <h3>Freight Transportation</h3>
-            <p>Reliable transportation service designed around your shipping needs.</p>
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64"><path d="M7 37h31V21H13v16m25 0h9l7 7v5h-4m-37 0H7V37m11 12h18m11 0h3M18 49a5 5 0 1 1-10 0 5 5 0 0 1 10 0Zm31 0a5 5 0 1 1-10 0 5 5 0 0 1 10 0Z"/></svg>
+            </div>
+            <h3>Flatbed Freight</h3>
+            <p>Safe and reliable transportation for construction materials, equipment and specialized freight.</p>
           </article>
 
-          <article class="card">
-            <div class="card-num">02</div>
-            <h3>Dedicated Freight</h3>
-            <p>Consistent capacity and dependable service for recurring freight.</p>
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64"><path d="M7 20h32v28H7V20Zm32 10h10l8 10v8h-5m-31 0h21m10 0h5M20 48a5 5 0 1 1-10 0 5 5 0 0 1 10 0Zm32 0a5 5 0 1 1-10 0 5 5 0 0 1 10 0Z"/></svg>
+            </div>
+            <h3>Dry Van Freight</h3>
+            <p>Efficient and dependable dry van solutions for general freight across multiple lanes.</p>
           </article>
 
-          <article class="card">
-            <div class="card-num">03</div>
-            <h3>Expedited Service</h3>
-            <p>Responsive transportation when timing and communication matter most.</p>
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 64 64"><path d="M7 20h32v28H7V20Zm32 10h10l8 10v8h-5m-31 0h21m10 0h5M20 48a5 5 0 1 1-10 0 5 5 0 0 1 10 0Zm32 0a5 5 0 1 1-10 0 5 5 0 0 1 10 0ZM23 27v14m-6-10 12 6m0-6-12 6"/></svg>
+            </div>
+            <h3>Reefer Freight</h3>
+            <p>Temperature-controlled transportation for sensitive, perishable and time-critical loads.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="about">
-      <div class="wrap about-grid">
-        <div class="about-copy">
-          <div class="section-top">
-            <small>About Amazing Cargo</small>
-            <h2>Built on reliability, communication, and trust.</h2>
-          </div>
-
-          <p>
-            Amazing Cargo Inc. is committed to dependable freight transportation,
-            professional service, and long-term relationships with customers,
-            drivers, and business partners.
-          </p>
-
-          <p>
-            We approach every shipment with care and maintain clear communication
-            throughout the transportation process.
-          </p>
-        </div>
-
-        <div class="about-panel">
-          <h3>Our Commitment</h3>
-          <p>
-            Safe operations, responsible transportation, and dependable service
-            from pickup through final delivery.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact" id="contact">
-      <div class="wrap contact-grid">
+    <section class="section section-dark" id="opportunities">
+      <div class="container opportunity-grid">
         <div>
-          <h2>Ready to move your business forward?</h2>
-          <p>Contact Amazing Cargo Inc. to discuss your transportation needs.</p>
+          <p class="eyebrow">Driver & Owner-Operator Opportunities</p>
+          <h2>More than transportation — a path forward</h2>
+          <p class="lead">
+            Amazing Cargo Inc. supports qualified drivers with flexible equipment options
+            designed to create greater independence and long-term opportunity.
+          </p>
+        </div>
 
-          <div class="contact-links">
-            <a href="tel:+13122410973">Phone: (312) 241-0973</a>
-            <a href="mailto:nikola@amazingcargoinc.com">Email: nikola@amazingcargoinc.com</a>
+        <div class="opportunity-cards">
+          <article>
+            <span>01</span>
+            <h3>Lease-to-Purchase</h3>
+            <p>A structured opportunity for qualified drivers who want to work toward truck ownership.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Truck Lease / Rental</h3>
+            <p>Flexible truck access for qualified drivers and owner-operators who need dependable equipment.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="about-panel">
+          <p class="eyebrow">About Amazing Cargo Inc.</p>
+          <h2>Built on reliability, communication and trust</h2>
+          <p>
+            Amazing Cargo Inc. is committed to dependable freight transportation and professional service.
+            We value long-term relationships with customers, drivers and business partners, and we approach
+            every shipment with care.
+          </p>
+          <p>
+            Our goal is simple: provide responsible transportation, clear communication and opportunities
+            that help people and businesses move forward.
+          </p>
+          <a class="text-link" href="#contact">Start a conversation →</a>
+        </div>
+
+        <div class="quote-panel">
+          <p class="quote-mark">“</p>
+          <blockquote>
+            Reliable freight. Quality equipment. Real opportunities.
+          </blockquote>
+          <p>That is how we help customers, drivers and owner-operators grow.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="why-us">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Why Amazing Cargo</p>
+          <h2>A dependable partner for every mile</h2>
+        </div>
+
+        <div class="why-grid">
+          <article><strong>Professional Communication</strong><p>Clear, respectful and responsive support.</p></article>
+          <article><strong>Safety-Focused Operations</strong><p>Responsible transportation remains central to every load.</p></article>
+          <article><strong>Flexible Solutions</strong><p>Freight and equipment options built around real needs.</p></article>
+          <article><strong>Long-Term Relationships</strong><p>We focus on trust, consistency and shared growth.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <p class="eyebrow">Contact Us</p>
+          <h2>Ready to move forward?</h2>
+          <p class="lead">Contact Amazing Cargo Inc. for freight inquiries or truck opportunity information.</p>
+
+          <div class="contact-details">
+            <a href="tel:+13122410973"><span>Phone</span>(312) 241-0973</a>
+            <a href="mailto:nikola@amazingcargoinc.com"><span>Email</span>nikola@amazingcargoinc.com</a>
+            <p><span>Service Area</span>United States</p>
           </div>
         </div>
 
-        <a class="btn btn-primary" href="mailto:nikola@amazingcargoinc.com">Get a Quote</a>
+        <form class="contact-form" id="contact-form">
+          <div class="field-row">
+            <label>Name<input name="name" type="text" required></label>
+            <label>Phone<input name="phone" type="tel"></label>
+          </div>
+          <label>Email<input name="email" type="email" required></label>
+          <label>
+            I am interested in
+            <select name="service">
+              <option>Freight quote</option>
+              <option>Flatbed service</option>
+              <option>Dry van service</option>
+              <option>Reefer service</option>
+              <option>Lease-to-purchase</option>
+              <option>Truck lease / rental</option>
+            </select>
+          </label>
+          <label>Message<textarea name="message" rows="5" required></textarea></label>
+          <button class="button" type="submit">Send Request</button>
+          <small>This form opens your email application with the request filled in.</small>
+        </form>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="wrap footer-row">
-      <div>© 2026 Amazing Cargo Inc. All rights reserved.</div>
-      <div>Moving Business Forward.</div>
+    <div class="container footer-grid">
+      <div class="brand footer-brand">
+        <span class="brand-mark">A</span>
+        <span class="brand-copy">
+          <strong>AMAZING CARGO INC.</strong>
+          <small>MOVING BUSINESS FORWARD</small>
+        </span>
+      </div>
+      <div>
+        <strong>Contact</strong>
+        <a href="tel:+13122410973">(312) 241-0973</a>
+        <a href="mailto:nikola@amazingcargoinc.com">nikola@amazingcargoinc.com</a>
+      </div>
+      <div>
+        <strong>Services</strong>
+        <a href="#services">Freight Transportation</a>
+        <a href="#opportunities">Truck Opportunities</a>
+      </div>
+      <div class="copyright">© 2026 Amazing Cargo Inc.<br>All rights reserved.</div>
     </div>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
