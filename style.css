@@ -84,7 +84,7 @@ button,input,select,textarea{font:inherit}
   display:flex;
   align-items:center;
   position:relative;
-  background:url("assets/hero-truck.png") right center/cover no-repeat;
+  background:url("hero-truck.png") right center/cover no-repeat;
 }
 .hero-overlay{
   position:absolute;inset:0;
