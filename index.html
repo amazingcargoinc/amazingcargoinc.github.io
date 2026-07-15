@@ -2,424 +2,175 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Amazing Cargo Inc. provides flatbed, dry van and reefer freight transportation, plus company-driver, lease-to-purchase and truck rental opportunities.">
-  <meta name="theme-color" content="#060d16">
-  <title>Amazing Cargo Inc. | Freight • Logistics • Transportation</title>
-  <link rel="stylesheet" href="style.css?v=3.5">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Amazing Cargo Inc. provides reliable dry van, flatbed and reefer transportation, plus company-driver and truck lease opportunities across the United States.">
+  <meta name="theme-color" content="#07101c">
+  <meta property="og:title" content="Amazing Cargo Inc. | Moving Freight. Building Trust.">
+  <meta property="og:description" content="Reliable freight transportation and real opportunities for professional drivers.">
+  <meta property="og:type" content="website">
+  <title>Amazing Cargo Inc. | Moving Freight. Building Trust.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+
   <header class="site-header">
-    <div class="container nav-wrap">
+    <div class="container nav">
       <a class="brand" href="#home" aria-label="Amazing Cargo Inc. home">
-        <span class="brand-mark">A</span>
-        <span class="brand-text">
+        <span class="brand-mark" aria-hidden="true">A</span>
+        <span>
           <strong>AMAZING CARGO INC.</strong>
           <small>FREIGHT • LOGISTICS • TRANSPORTATION</small>
         </span>
       </a>
 
-      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
+      <button class="menu-button" type="button" aria-controls="main-nav" aria-expanded="false" aria-label="Open menu">
         <span></span><span></span><span></span>
       </button>
 
-      <nav class="main-nav" id="main-nav">
+      <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        <a href="#drivers" data-i18n="navDrivers">Drivers</a>
         <a href="#services" data-i18n="navServices">Services</a>
-        <a href="#opportunities" data-i18n="navOpportunities">Opportunities</a>
-        <a href="#about" data-i18n="navAbout">About Us</a>
-        <a href="#why-us" data-i18n="navWhy">Why Us</a>
         <a href="#contact" data-i18n="navContact">Contact</a>
-        <a class="nav-phone" href="tel:+13122410973">+1 (312) 241-0973</a>
-
-        <div class="language-switch" aria-label="Language selector">
-          <button type="button" class="lang-btn active" data-lang="en">EN</button>
-          <span>|</span>
-          <button type="button" class="lang-btn" data-lang="es">ES</button>
+        <div class="language-switch" aria-label="Choose language">
+          <button type="button" class="lang active" data-lang="en" aria-pressed="true">EN</button>
+          <span aria-hidden="true">/</span>
+          <button type="button" class="lang" data-lang="es" aria-pressed="false">ES</button>
         </div>
-
-        <a class="button button-small"
-           href="mailto:office@amazingcargoinc.com?subject=Freight%20Quote%20Request"
-           data-i18n="navQuote">Get a Quote</a>
+        <a class="nav-call" href="tel:+13122410973" data-i18n="call">Call Us</a>
       </nav>
     </div>
   </header>
 
-  <main id="home">
-    <section class="hero">
-      <div class="hero-overlay"></div>
-      <div class="container hero-inner">
-        <div class="hero-copy">
-          <p class="eyebrow" data-i18n="heroEyebrow">Reliable. Efficient. Professional.</p>
-          <h1 data-i18n-html="heroTitle">MOVING<br>BUSINESS<br><span>FORWARD.</span></h1>
-          <p class="hero-lead" data-i18n="heroLead">
-            Amazing Cargo Inc. provides dependable freight transportation with professional communication,
-            safety-focused operations, and opportunities that help drivers and owner-operators grow.
-          </p>
-
-          <div class="hero-actions">
-            <a class="button"
-               href="mailto:office@amazingcargoinc.com?subject=Freight%20Quote%20Request"
-               data-i18n="requestQuote">Request a Quote</a>
-            <a class="button button-outline"
-               href="tel:+13122410973"
-               data-i18n="callPhone">Call +1 (312) 241-0973</a>
-          </div>
+  <main id="main">
+    <section class="hero" id="home">
+      <div class="hero-image" role="img" aria-label="Semi-truck traveling on an American highway"></div>
+      <div class="hero-shade"></div>
+      <div class="container hero-content">
+        <p class="eyebrow" data-i18n="heroEyebrow">Freight transportation across the United States</p>
+        <h1 data-i18n-html="heroTitle">Moving Freight.<br><span>Building Trust.</span></h1>
+        <p class="hero-copy" data-i18n="heroCopy">Dependable transportation, clear communication and real opportunities for professional drivers.</p>
+        <div class="hero-actions">
+          <a class="button" href="mailto:office@amazingcargoinc.com?subject=Driver%20Opportunity" data-i18n="driverButton">Driver Opportunities</a>
+          <a class="button button-ghost" href="mailto:office@amazingcargoinc.com?subject=Freight%20Rate%20Request" data-i18n="rateButton">Request a Freight Rate</a>
         </div>
+      </div>
+      <div class="container trust-row" aria-label="Company values">
+        <span data-i18n="trustSafety">Safety focused</span>
+        <span data-i18n="trustCommunication">Clear communication</span>
+        <span data-i18n="trustNationwide">Nationwide service</span>
       </div>
     </section>
 
-    <section class="section offer-section" id="services">
-      <div class="container">
-        <div class="section-heading center">
-          <p class="eyebrow" data-i18n="offerEyebrow">What We Offer</p>
-          <h2 data-i18n="offerTitle">Solutions That Keep You Moving</h2>
-          <p data-i18n="offerLead">Driver opportunities first, followed by dependable freight solutions.</p>
+    <section class="section section-light" id="drivers">
+      <div class="container section-grid">
+        <div class="section-intro">
+          <p class="eyebrow dark" data-i18n="driversEyebrow">Driver opportunities</p>
+          <h2 data-i18n="driversTitle">A better path forward.</h2>
+          <p data-i18n="driversLead">Choose the opportunity that fits your goals and work with a company that values professional drivers.</p>
+          <a class="text-link" href="mailto:office@amazingcargoinc.com?subject=Driver%20Opportunity" data-i18n="talkButton">Talk with our team <span aria-hidden="true">→</span></a>
         </div>
 
-        <div class="card-grid">
-          <article class="offer-card">
-            <div class="icon-box">💼</div>
-            <h3 data-i18n="companyTitle">Company Driver – Percentage Pay</h3>
-            <p data-i18n="companyText">
-              Earn competitive percentage-based pay while we cover truck payments, maintenance and repair costs.
-              Focus on safe driving and maximizing your earning potential.
-            </p>
-          </article>
-
-          <article class="offer-card">
-            <div class="icon-box">🤝</div>
-            <h3 data-i18n="leasePurchaseTitle">Lease-to-Purchase Opportunities</h3>
-            <p data-i18n="leasePurchaseText">A structured opportunity for qualified drivers to work toward truck ownership.</p>
-          </article>
-
-          <article class="offer-card">
-            <div class="icon-box">🔑</div>
-            <h3 data-i18n="rentalTitle">Truck Lease / Rental Options</h3>
-            <p data-i18n="rentalText">Flexible truck access for qualified drivers and owner-operators.</p>
-          </article>
-
-          <article class="offer-card">
-            <div class="icon-box">🚚</div>
-            <h3 data-i18n="flatbedTitle">Flatbed Freight</h3>
-            <p data-i18n="flatbedText">Safe and reliable transport for oversized, construction and specialized freight.</p>
-          </article>
-
-          <article class="offer-card">
-            <div class="icon-box">🚛</div>
-            <h3 data-i18n="dryvanTitle">Dry Van Freight</h3>
-            <p data-i18n="dryvanText">Efficient and dependable dry van solutions for general freight across multiple lanes.</p>
-          </article>
-
-          <article class="offer-card">
-            <div class="icon-box">❄️</div>
-            <h3 data-i18n="reeferTitle">Reefer Freight</h3>
-            <p data-i18n="reeferText">Temperature-controlled service for sensitive and time-critical loads.</p>
-          </article>
-        </div>
-
-        <div class="feature-strip">
+        <div class="opportunity-list">
           <article>
-            <strong data-i18n="safetyFirst">Safety First</strong>
-            <span data-i18n="safetyText">Committed to high safety standards.</span>
+            <span class="number">01</span>
+            <div>
+              <h3 data-i18n="companyTitle">Company Driver</h3>
+              <p data-i18n="companyText">Competitive percentage pay while we handle truck maintenance and repair costs.</p>
+            </div>
           </article>
           <article>
-            <strong data-i18n="clearCommunication">Clear Communication</strong>
-            <span data-i18n="communicationText">Responsive updates and dependable support.</span>
+            <span class="number">02</span>
+            <div>
+              <h3 data-i18n="leaseTitle">Lease to Purchase</h3>
+              <p data-i18n="leaseText">A practical opportunity for qualified drivers working toward truck ownership.</p>
+            </div>
           </article>
           <article>
-            <strong data-i18n="onTimeDelivery">On-Time Delivery</strong>
-            <span data-i18n="onTimeText">Your freight is our priority.</span>
-          </article>
-          <article>
-            <strong data-i18n="growWithUs">Grow With Us</strong>
-            <span data-i18n="growText">Real opportunities for qualified drivers.</span>
+            <span class="number">03</span>
+            <div>
+              <h3 data-i18n="rentalTitle">Truck Lease &amp; Rental</h3>
+              <p data-i18n="rentalText">Flexible equipment options for qualified drivers and owner-operators.</p>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section section-dark" id="opportunities">
-      <div class="container split-grid">
-        <div>
-          <p class="eyebrow" data-i18n="oppEyebrow">Driver Opportunities</p>
-          <h2 data-i18n="oppTitle">More than transportation — a path forward</h2>
-          <p class="lead" data-i18n="oppLead">
-            Choose from company-driver percentage pay, lease-to-purchase, or truck lease/rental opportunities.
-          </p>
-        </div>
-
-        <div class="mini-card-grid">
-          <article class="mini-card">
-            <span class="mini-number">01</span>
-            <h3 data-i18n="companyShortTitle">Company Driver</h3>
-            <p data-i18n="companyShortText">Percentage-based pay with no responsibility for truck repair costs.</p>
-          </article>
-          <article class="mini-card">
-            <span class="mini-number">02</span>
-            <h3 data-i18n="leaseShortTitle">Lease-to-Purchase</h3>
-            <p data-i18n="leaseShortText">A practical path toward truck ownership for qualified drivers.</p>
-          </article>
-          <article class="mini-card">
-            <span class="mini-number">03</span>
-            <h3 data-i18n="rentalShortTitle">Truck Lease / Rental</h3>
-            <p data-i18n="rentalShortText">Dependable equipment options without immediate ownership.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="about">
-      <div class="container split-grid">
-        <div>
-          <p class="eyebrow" data-i18n="aboutEyebrow">About Amazing Cargo Inc.</p>
-          <h2 data-i18n="aboutTitle">Built on reliability, communication and trust.</h2>
-          <p class="lead" data-i18n="aboutLead">
-            Amazing Cargo Inc. is committed to dependable freight transportation, professional service
-            and long-term relationships with customers, drivers and business partners.
-          </p>
-          <p class="body-copy" data-i18n="aboutBody">
-            We approach every shipment with care and maintain clear communication throughout the transportation process.
-          </p>
-        </div>
-
-        <div class="quote-panel">
-          <p class="quote-mark">“</p>
-          <blockquote data-i18n="quoteText">Reliable freight. Quality equipment. Real opportunities.</blockquote>
-          <p data-i18n="quoteLead">Helping customers, drivers and owner-operators move forward.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-dark" id="why-us">
+    <section class="section section-dark" id="services">
       <div class="container">
         <div class="section-heading">
-          <p class="eyebrow" data-i18n="whyEyebrow">Why Choose Amazing Cargo</p>
-          <h2 data-i18n="whyTitle">A dependable partner for every mile</h2>
+          <div>
+            <p class="eyebrow" data-i18n="servicesEyebrow">Freight services</p>
+            <h2 data-i18n="servicesTitle">The right equipment for every load.</h2>
+          </div>
+          <p data-i18n="servicesLead">Reliable service supported by professional drivers and responsive communication.</p>
         </div>
 
-        <div class="why-grid">
-          <article>
-            <strong data-i18n="whyDrivers">Professional Drivers</strong>
-            <p data-i18n="whyDriversText">Respectful, responsible and service-focused.</p>
+        <div class="service-grid">
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><path d="M5 12h38v23H5zM13 35v5m22-5v5M9 18h30"/></svg>
+            </span>
+            <h3 data-i18n="dryVanTitle">Dry Van</h3>
+            <p data-i18n="dryVanText">Dependable transportation for general and packaged freight.</p>
           </article>
-          <article>
-            <strong data-i18n="whyCommunication">Transparent Communication</strong>
-            <p data-i18n="whyCommunicationText">Responsive updates from pickup to delivery.</p>
+          <article class="service-card featured">
+            <span class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><path d="M6 30h36M10 30V18h28v12M14 34a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm20 0a4 4 0 1 0 0 8 4 4 0 0 0 0-8ZM18 18V8h12v10"/></svg>
+            </span>
+            <h3 data-i18n="flatbedTitle">Flatbed</h3>
+            <p data-i18n="flatbedText">Safe transport for construction, oversized and specialized freight.</p>
           </article>
-          <article>
-            <strong data-i18n="whySafety">Safety Focused</strong>
-            <p data-i18n="whySafetyText">Safety remains central to every operation.</p>
-          </article>
-          <article>
-            <strong data-i18n="whyGrowth">Long-Term Growth</strong>
-            <p data-i18n="whyGrowthText">We build lasting relationships and real opportunities.</p>
+          <article class="service-card">
+            <span class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48"><path d="M24 5v38M8 14l32 20M40 14 8 34M20 9l4 4 4-4M20 39l4-4 4 4"/></svg>
+            </span>
+            <h3 data-i18n="reeferTitle">Reefer</h3>
+            <p data-i18n="reeferText">Temperature-controlled transportation for sensitive freight.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section contact-section" id="contact">
-      <div class="container contact-grid">
+    <section class="contact" id="contact">
+      <div class="container contact-inner">
         <div>
-          <p class="eyebrow" data-i18n="contactEyebrow">Contact Us</p>
-          <h2 data-i18n="contactTitle">Ready to move forward?</h2>
-          <p class="lead" data-i18n="contactLead">
-            Contact Amazing Cargo Inc. about a driver opportunity or freight rate.
-          </p>
-
-          <div class="contact-details">
-            <a href="tel:+13122410973"><span data-i18n="phoneLabel">Phone</span>+1 (312) 241-0973</a>
-            <a href="mailto:office@amazingcargoinc.com"><span data-i18n="emailLabel">Email</span>office@amazingcargoinc.com</a>
-            <p><span data-i18n="serviceAreaLabel">Service Area</span><span data-i18n="serviceArea">United States</span></p>
-          </div>
+          <p class="eyebrow" data-i18n="contactEyebrow">Let's get moving</p>
+          <h2 data-i18n="contactTitle">Ready to work with Amazing Cargo?</h2>
         </div>
-
-        <form class="contact-form" id="contact-form">
-          <div class="field-row">
-            <label><span data-i18n="formName">Name</span><input name="name" type="text" required></label>
-            <label><span data-i18n="formPhone">Phone</span><input name="phone" type="tel"></label>
-          </div>
-
-          <label><span data-i18n="formEmail">Email</span><input name="email" type="email" required></label>
-
-          <label>
-            <span data-i18n="formInterest">I am interested in</span>
-            <select name="service">
-              <option value="Company Driver - Percentage Pay" data-i18n="optCompany">Company Driver – Percentage Pay</option>
-              <option value="Lease-to-Purchase" data-i18n="optLease">Lease-to-Purchase</option>
-              <option value="Truck Lease / Rental" data-i18n="optRental">Truck Lease / Rental</option>
-              <option value="Freight Rate" data-i18n="optFreight">Freight Rate</option>
-              <option value="Flatbed Freight" data-i18n="optFlatbed">Flatbed Freight</option>
-              <option value="Dry Van Freight" data-i18n="optDryvan">Dry Van Freight</option>
-              <option value="Reefer Freight" data-i18n="optReefer">Reefer Freight</option>
-            </select>
-          </label>
-
-          <label><span data-i18n="formMessage">Message</span><textarea name="message" rows="5" required></textarea></label>
-          <button class="button" type="submit" data-i18n="sendRequest">Send Request</button>
-          <small data-i18n="formNote">This opens your email app with the request completed.</small>
-        </form>
+        <div class="contact-actions">
+          <a href="tel:+13122410973">
+            <small data-i18n="phoneLabel">Call us</small>
+            <strong>+1 (312) 241-0973</strong>
+          </a>
+          <a href="mailto:office@amazingcargoinc.com">
+            <small data-i18n="emailLabel">Email us</small>
+            <strong>office@amazingcargoinc.com</strong>
+          </a>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="brand">
-        <span class="brand-mark">A</span>
-        <span class="brand-text">
+    <div class="container footer-inner">
+      <div class="brand footer-brand">
+        <span class="brand-mark" aria-hidden="true">A</span>
+        <span>
           <strong>AMAZING CARGO INC.</strong>
-          <small>MOVING BUSINESS FORWARD</small>
+          <small data-i18n="footerTagline">MOVING FREIGHT. BUILDING TRUST.</small>
         </span>
       </div>
-
-      <div>
-        <strong data-i18n="footerContact">Contact</strong>
-        <a href="tel:+13122410973">+1 (312) 241-0973</a>
-        <a href="mailto:office@amazingcargoinc.com">office@amazingcargoinc.com</a>
-      </div>
-
-      <div>
-        <strong data-i18n="footerServices">Services</strong>
-        <a href="#opportunities" data-i18n="footerDrivers">Driver Opportunities</a>
-        <a href="#services" data-i18n="footerFreight">Freight Services</a>
-      </div>
-
-      <div class="copyright">© 2026 Amazing Cargo Inc.<br><span data-i18n="rights">All Rights Reserved.</span></div>
+      <p>© 2026 Amazing Cargo Inc. <span data-i18n="rights">All rights reserved.</span></p>
+      <a class="photo-credit" href="https://unsplash.com/photos/a-semi-truck-drives-along-a-scenic-highway-near-mountains-g_FizakXz50" target="_blank" rel="noopener">Photo: Mason Gemelke / Unsplash</a>
     </div>
   </footer>
 
-<script>
-const translations = {
-  en: {
-    navServices:"Services",navOpportunities:"Opportunities",navAbout:"About Us",navWhy:"Why Us",navContact:"Contact",navQuote:"Get a Quote",
-    heroEyebrow:"Reliable. Efficient. Professional.",heroTitle:"MOVING<br>BUSINESS<br><span>FORWARD.</span>",
-    heroLead:"Amazing Cargo Inc. provides dependable freight transportation with professional communication, safety-focused operations, and opportunities that help drivers and owner-operators grow.",
-    requestQuote:"Request a Quote",callPhone:"Call +1 (312) 241-0973",
-    offerEyebrow:"What We Offer",offerTitle:"Solutions That Keep You Moving",offerLead:"Driver opportunities first, followed by dependable freight solutions.",
-    companyTitle:"Company Driver – Percentage Pay",companyText:"Earn competitive percentage-based pay while we cover truck payments, maintenance and repair costs. Focus on safe driving and maximizing your earning potential.",
-    leasePurchaseTitle:"Lease-to-Purchase Opportunities",leasePurchaseText:"A structured opportunity for qualified drivers to work toward truck ownership.",
-    rentalTitle:"Truck Lease / Rental Options",rentalText:"Flexible truck access for qualified drivers and owner-operators.",
-    flatbedTitle:"Flatbed Freight",flatbedText:"Safe and reliable transport for oversized, construction and specialized freight.",
-    dryvanTitle:"Dry Van Freight",dryvanText:"Efficient and dependable dry van solutions for general freight across multiple lanes.",
-    reeferTitle:"Reefer Freight",reeferText:"Temperature-controlled service for sensitive and time-critical loads.",
-    safetyFirst:"Safety First",safetyText:"Committed to high safety standards.",clearCommunication:"Clear Communication",communicationText:"Responsive updates and dependable support.",
-    onTimeDelivery:"On-Time Delivery",onTimeText:"Your freight is our priority.",growWithUs:"Grow With Us",growText:"Real opportunities for qualified drivers.",
-    oppEyebrow:"Driver Opportunities",oppTitle:"More than transportation — a path forward",oppLead:"Choose from company-driver percentage pay, lease-to-purchase, or truck lease/rental opportunities.",
-    companyShortTitle:"Company Driver",companyShortText:"Percentage-based pay with no responsibility for truck repair costs.",
-    leaseShortTitle:"Lease-to-Purchase",leaseShortText:"A practical path toward truck ownership for qualified drivers.",
-    rentalShortTitle:"Truck Lease / Rental",rentalShortText:"Dependable equipment options without immediate ownership.",
-    aboutEyebrow:"About Amazing Cargo Inc.",aboutTitle:"Built on reliability, communication and trust.",
-    aboutLead:"Amazing Cargo Inc. is committed to dependable freight transportation, professional service and long-term relationships with customers, drivers and business partners.",
-    aboutBody:"We approach every shipment with care and maintain clear communication throughout the transportation process.",
-    quoteText:"Reliable freight. Quality equipment. Real opportunities.",quoteLead:"Helping customers, drivers and owner-operators move forward.",
-    whyEyebrow:"Why Choose Amazing Cargo",whyTitle:"A dependable partner for every mile",
-    whyDrivers:"Professional Drivers",whyDriversText:"Respectful, responsible and service-focused.",
-    whyCommunication:"Transparent Communication",whyCommunicationText:"Responsive updates from pickup to delivery.",
-    whySafety:"Safety Focused",whySafetyText:"Safety remains central to every operation.",
-    whyGrowth:"Long-Term Growth",whyGrowthText:"We build lasting relationships and real opportunities.",
-    contactEyebrow:"Contact Us",contactTitle:"Ready to move forward?",contactLead:"Contact Amazing Cargo Inc. about a driver opportunity or freight rate.",
-    phoneLabel:"Phone",emailLabel:"Email",serviceAreaLabel:"Service Area",serviceArea:"United States",
-    formName:"Name",formPhone:"Phone",formEmail:"Email",formInterest:"I am interested in",formMessage:"Message",
-    optCompany:"Company Driver – Percentage Pay",optLease:"Lease-to-Purchase",optRental:"Truck Lease / Rental",
-    optFreight:"Freight Rate",optFlatbed:"Flatbed Freight",optDryvan:"Dry Van Freight",optReefer:"Reefer Freight",
-    sendRequest:"Send Request",formNote:"This opens your email app with the request completed.",
-    footerContact:"Contact",footerServices:"Services",footerDrivers:"Driver Opportunities",footerFreight:"Freight Services",rights:"All Rights Reserved."
-  },
-  es: {
-    navServices:"Servicios",navOpportunities:"Oportunidades",navAbout:"Nosotros",navWhy:"Por Qué Elegirnos",navContact:"Contacto",navQuote:"Solicitar Cotización",
-    heroEyebrow:"Confiable. Eficiente. Profesional.",heroTitle:"IMPULSANDO<br>SU NEGOCIO<br><span>HACIA ADELANTE.</span>",
-    heroLead:"Amazing Cargo Inc. ofrece transporte de carga confiable, comunicación profesional, operaciones enfocadas en la seguridad y oportunidades que ayudan a crecer a conductores y propietarios-operadores.",
-    requestQuote:"Solicitar Cotización",callPhone:"Llamar al +1 (312) 241-0973",
-    offerEyebrow:"Lo Que Ofrecemos",offerTitle:"Soluciones Que Lo Mantienen en Movimiento",offerLead:"Primero oportunidades para conductores, seguidas de soluciones confiables de carga.",
-    companyTitle:"Conductor de Empresa – Pago por Porcentaje",companyText:"Gane un pago competitivo por porcentaje mientras nosotros cubrimos los pagos del camión, el mantenimiento y las reparaciones. Concéntrese en conducir con seguridad y aumentar su potencial de ingresos.",
-    leasePurchaseTitle:"Oportunidades de Arrendamiento con Compra",leasePurchaseText:"Una oportunidad estructurada para que conductores calificados avancen hacia la propiedad de su camión.",
-    rentalTitle:"Opciones de Arrendamiento / Renta de Camiones",rentalText:"Acceso flexible a camiones para conductores calificados y propietarios-operadores.",
-    flatbedTitle:"Carga en Plataforma",flatbedText:"Transporte seguro y confiable para carga sobredimensionada, construcción y carga especializada.",
-    dryvanTitle:"Carga en Caja Seca",dryvanText:"Soluciones eficientes y confiables de caja seca para carga general en múltiples rutas.",
-    reeferTitle:"Carga Refrigerada",reeferText:"Servicio con temperatura controlada para cargas sensibles y urgentes.",
-    safetyFirst:"La Seguridad Primero",safetyText:"Comprometidos con altos estándares de seguridad.",clearCommunication:"Comunicación Clara",communicationText:"Actualizaciones y soporte confiable.",
-    onTimeDelivery:"Entrega a Tiempo",onTimeText:"Su carga es nuestra prioridad.",growWithUs:"Crezca con Nosotros",growText:"Oportunidades reales para conductores calificados.",
-    oppEyebrow:"Oportunidades para Conductores",oppTitle:"Más que transporte: un camino hacia adelante",oppLead:"Elija entre pago por porcentaje como conductor de empresa, arrendamiento con compra o arrendamiento/renta de camiones.",
-    companyShortTitle:"Conductor de Empresa",companyShortText:"Pago por porcentaje sin responsabilidad por costos de reparación del camión.",
-    leaseShortTitle:"Arrendamiento con Compra",leaseShortText:"Un camino práctico hacia la propiedad del camión para conductores calificados.",
-    rentalShortTitle:"Arrendamiento / Renta",rentalShortText:"Opciones confiables de equipo sin propiedad inmediata.",
-    aboutEyebrow:"Acerca de Amazing Cargo Inc.",aboutTitle:"Construido sobre confiabilidad, comunicación y confianza.",
-    aboutLead:"Amazing Cargo Inc. está comprometida con el transporte confiable, el servicio profesional y relaciones duraderas con clientes, conductores y socios comerciales.",
-    aboutBody:"Tratamos cada envío con cuidado y mantenemos una comunicación clara durante todo el proceso de transporte.",
-    quoteText:"Carga confiable. Equipo de calidad. Oportunidades reales.",quoteLead:"Ayudamos a clientes, conductores y propietarios-operadores a avanzar.",
-    whyEyebrow:"Por Qué Elegir Amazing Cargo",whyTitle:"Un socio confiable en cada milla",
-    whyDrivers:"Conductores Profesionales",whyDriversText:"Respetuosos, responsables y enfocados en el servicio.",
-    whyCommunication:"Comunicación Transparente",whyCommunicationText:"Actualizaciones desde la recogida hasta la entrega.",
-    whySafety:"Enfoque en la Seguridad",whySafetyText:"La seguridad es fundamental en cada operación.",
-    whyGrowth:"Crecimiento a Largo Plazo",whyGrowthText:"Construimos relaciones duraderas y oportunidades reales.",
-    contactEyebrow:"Contáctenos",contactTitle:"¿Listo para avanzar?",contactLead:"Comuníquese con Amazing Cargo Inc. sobre una oportunidad para conductores o una tarifa de carga.",
-    phoneLabel:"Teléfono",emailLabel:"Correo Electrónico",serviceAreaLabel:"Área de Servicio",serviceArea:"Estados Unidos",
-    formName:"Nombre",formPhone:"Teléfono",formEmail:"Correo Electrónico",formInterest:"Me interesa",formMessage:"Mensaje",
-    optCompany:"Conductor de Empresa – Pago por Porcentaje",optLease:"Arrendamiento con Compra",optRental:"Arrendamiento / Renta de Camiones",
-    optFreight:"Tarifa de Carga",optFlatbed:"Carga en Plataforma",optDryvan:"Carga en Caja Seca",optReefer:"Carga Refrigerada",
-    sendRequest:"Enviar Solicitud",formNote:"Esto abre su aplicación de correo con la solicitud completada.",
-    footerContact:"Contacto",footerServices:"Servicios",footerDrivers:"Oportunidades para Conductores",footerFreight:"Servicios de Carga",rights:"Todos los Derechos Reservados."
-  }
-};
-
-function setLanguage(lang) {
-  document.documentElement.lang = lang;
-  localStorage.setItem("siteLanguage", lang);
-
-  document.querySelectorAll("[data-i18n]").forEach(el => {
-    const value = translations[lang]?.[el.dataset.i18n];
-    if (value) el.textContent = value;
-  });
-
-  document.querySelectorAll("[data-i18n-html]").forEach(el => {
-    const value = translations[lang]?.[el.dataset.i18nHtml];
-    if (value) el.innerHTML = value;
-  });
-
-  document.querySelectorAll(".lang-btn").forEach(btn => {
-    btn.classList.toggle("active", btn.dataset.lang === lang);
-  });
-}
-
-document.querySelectorAll(".lang-btn").forEach(btn => {
-  btn.addEventListener("click", () => setLanguage(btn.dataset.lang));
-});
-
-setLanguage(localStorage.getItem("siteLanguage") || "en");
-
-const menuToggle = document.querySelector(".menu-toggle");
-const nav = document.querySelector(".main-nav");
-
-menuToggle?.addEventListener("click", () => {
-  const open = nav.classList.toggle("open");
-  menuToggle.setAttribute("aria-expanded", String(open));
-});
-
-document.querySelectorAll(".main-nav a").forEach(link => {
-  link.addEventListener("click", () => {
-    nav.classList.remove("open");
-    menuToggle?.setAttribute("aria-expanded", "false");
-  });
-});
-
-const form = document.getElementById("contact-form");
-form?.addEventListener("submit", event => {
-  event.preventDefault();
-  const data = new FormData(form);
-  const subject = encodeURIComponent(`Website inquiry: ${data.get("service")}`);
-  const body = encodeURIComponent(
-`Name: ${data.get("name")}
-Phone: ${data.get("phone")}
-Email: ${data.get("email")}
-Interested in: ${data.get("service")}
-
-Message:
-${data.get("message")}`
-  );
-  window.location.href = `mailto:office@amazingcargoinc.com?subject=${subject}&body=${body}`;
-});
-</script>
+  <script src="script.js"></script>
 </body>
 </html>
