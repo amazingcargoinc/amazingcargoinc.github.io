@@ -3,6 +3,7 @@ const translations = {
     skip: "Skip to content",
     navDrivers: "Drivers",
     navServices: "Services",
+    navApply: "Apply",
     navContact: "Contact",
     call: "Call Us",
     heroEyebrow: "Freight transportation across the United States",
@@ -16,7 +17,7 @@ const translations = {
     driversEyebrow: "Driver opportunities",
     driversTitle: "A better path forward.",
     driversLead: "Choose the opportunity that fits your goals and work with a company that values professional drivers.",
-    talkButton: "Talk with our team →",
+    talkButton: "Start your application →",
     companyTitle: "Company Driver",
     companyText: "Competitive percentage pay while we handle truck maintenance and repair costs.",
     leaseTitle: "Lease to Purchase",
@@ -32,6 +33,39 @@ const translations = {
     flatbedText: "Safe transport for construction, oversized and specialized freight.",
     reeferTitle: "Reefer",
     reeferText: "Temperature-controlled transportation for sensitive freight.",
+    applyEyebrow: "Quick driver application",
+    applyTitle: "Tell us about your experience.",
+    applyLead: "Complete this short initial application and our team will contact you about available opportunities.",
+    privacyText: "For your privacy, do not enter your Social Security number, CDL number, or medical information.",
+    formName: "Full Name",
+    formPhone: "Phone Number",
+    formEmail: "Email Address",
+    formState: "Home State",
+    formExperience: "Years of CDL-A Experience",
+    formOpportunity: "Preferred Opportunity",
+    selectOption: "Select one",
+    optionCompany: "Company Driver – Percentage Pay",
+    optionLease: "Lease to Purchase",
+    optionRental: "Truck Lease / Rental",
+    formTrailer: "Trailer Experience",
+    optionDryVan: "Dry Van",
+    optionFlatbed: "Flatbed",
+    optionReefer: "Reefer",
+    formOtr: "How Long Can You Stay OTR?",
+    selectOptionOtr: "Select one",
+    optionTwoWeeks: "2 weeks",
+    optionThreeWeeks: "3 weeks",
+    optionFourWeeks: "4+ weeks",
+    optionRegional: "Regional only",
+    formContactTime: "Best Time to Contact You",
+    optionAnytime: "Any time",
+    optionMorning: "Morning",
+    optionAfternoon: "Afternoon",
+    optionEvening: "Evening",
+    formMessage: "Anything Else We Should Know? (Optional)",
+    formConsent: "I understand this is an initial inquiry and not a complete employment application.",
+    submitApplication: "Send Initial Application",
+    formNote: "Submitting opens your email app with the application ready to send to our office.",
     contactEyebrow: "Let's get moving",
     contactTitle: "Ready to work with Amazing Cargo?",
     phoneLabel: "Call us",
@@ -43,6 +77,7 @@ const translations = {
     skip: "Ir al contenido",
     navDrivers: "Conductores",
     navServices: "Servicios",
+    navApply: "Solicitud",
     navContact: "Contacto",
     call: "Llámenos",
     heroEyebrow: "Transporte de carga en todo Estados Unidos",
@@ -56,7 +91,7 @@ const translations = {
     driversEyebrow: "Oportunidades para conductores",
     driversTitle: "Un mejor camino hacia adelante.",
     driversLead: "Elija la oportunidad que se adapte a sus metas y trabaje con una empresa que valora a los conductores profesionales.",
-    talkButton: "Hable con nuestro equipo →",
+    talkButton: "Inicie su solicitud →",
     companyTitle: "Conductor de Empresa",
     companyText: "Pago competitivo por porcentaje mientras nosotros cubrimos el mantenimiento y las reparaciones del camión.",
     leaseTitle: "Arrendamiento con Compra",
@@ -72,6 +107,39 @@ const translations = {
     flatbedText: "Transporte seguro para construcción, carga sobredimensionada y especializada.",
     reeferTitle: "Refrigerado",
     reeferText: "Transporte con temperatura controlada para carga sensible.",
+    applyEyebrow: "Solicitud rápida para conductores",
+    applyTitle: "Cuéntenos sobre su experiencia.",
+    applyLead: "Complete esta breve solicitud inicial y nuestro equipo lo contactará sobre las oportunidades disponibles.",
+    privacyText: "Para su privacidad, no ingrese su número de Seguro Social, número de CDL ni información médica.",
+    formName: "Nombre Completo",
+    formPhone: "Número de Teléfono",
+    formEmail: "Correo Electrónico",
+    formState: "Estado de Residencia",
+    formExperience: "Años de Experiencia con CDL-A",
+    formOpportunity: "Oportunidad Preferida",
+    selectOption: "Seleccione una opción",
+    optionCompany: "Conductor de Empresa – Pago por Porcentaje",
+    optionLease: "Arrendamiento con Compra",
+    optionRental: "Arrendamiento / Renta de Camión",
+    formTrailer: "Experiencia con Remolques",
+    optionDryVan: "Caja Seca",
+    optionFlatbed: "Plataforma",
+    optionReefer: "Refrigerado",
+    formOtr: "¿Cuánto Tiempo Puede Permanecer OTR?",
+    selectOptionOtr: "Seleccione una opción",
+    optionTwoWeeks: "2 semanas",
+    optionThreeWeeks: "3 semanas",
+    optionFourWeeks: "4+ semanas",
+    optionRegional: "Solo regional",
+    formContactTime: "Mejor Horario para Contactarlo",
+    optionAnytime: "Cualquier hora",
+    optionMorning: "Mañana",
+    optionAfternoon: "Tarde",
+    optionEvening: "Noche",
+    formMessage: "¿Hay Algo Más que Debamos Saber? (Opcional)",
+    formConsent: "Entiendo que esta es una consulta inicial y no una solicitud de empleo completa.",
+    submitApplication: "Enviar Solicitud Inicial",
+    formNote: "Al enviar, se abrirá su correo electrónico con la solicitud lista para enviarse a nuestra oficina.",
     contactEyebrow: "Pongámonos en marcha",
     contactTitle: "¿Listo para trabajar con Amazing Cargo?",
     phoneLabel: "Llámenos",
@@ -123,3 +191,33 @@ document.querySelectorAll(".main-nav a").forEach((link) => {
 });
 
 setLanguage(localStorage.getItem("amazingCargoLanguage") || "en");
+
+const driverForm = document.getElementById("driver-form");
+
+driverForm?.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const data = new FormData(driverForm);
+  const trailerExperience = [...driverForm.querySelectorAll('input[name="trailer"]:checked')]
+    .map((input) => input.value)
+    .join(", ") || "Not specified";
+  const name = data.get("name");
+  const subject = encodeURIComponent(`Driver Application - ${name}`);
+  const body = encodeURIComponent(
+`DRIVER APPLICATION
+
+Name: ${name}
+Phone: ${data.get("phone")}
+Email: ${data.get("email")}
+Home State: ${data.get("state")}
+CDL-A Experience: ${data.get("experience")} years
+Preferred Opportunity: ${data.get("opportunity")}
+Trailer Experience: ${trailerExperience}
+Available OTR: ${data.get("otr")}
+Best Contact Time: ${data.get("contactTime")}
+
+Additional Information:
+${data.get("message") || "None provided"}`
+  );
+
+  window.location.href = `mailto:office@amazingcargoinc.com?subject=${subject}&body=${body}`;
+});

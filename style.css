@@ -124,7 +124,7 @@ button { font: inherit; }
 .hero-image,
 .hero-shade { position: absolute; inset: 0; }
 .hero-image {
-  background: url("hero-truck-natural.jpg") 64% center / cover no-repeat;
+  background: url("hero-truck-v2.webp") 66% center / cover no-repeat;
   transform: scale(1.01);
 }
 .hero-shade {
@@ -266,6 +266,87 @@ h2 {
 .service-card h3 { margin: 34px 0 10px; font-size: 25px; }
 .service-card p { margin-bottom: 0; color: #a9b6c7; }
 
+.application-section {
+  background:
+    radial-gradient(circle at 8% 8%, rgba(22, 132, 255, 0.08), transparent 26%),
+    var(--paper);
+}
+.application-grid {
+  display: grid;
+  grid-template-columns: 0.76fr 1.24fr;
+  gap: 7vw;
+  align-items: start;
+}
+.application-copy { position: sticky; top: 120px; }
+.application-copy > p:not(.eyebrow) { color: var(--muted); font-size: 17px; }
+.privacy-note {
+  display: grid;
+  grid-template-columns: 27px 1fr;
+  gap: 12px;
+  margin-top: 28px;
+  padding: 17px;
+  color: #44566d;
+  background: #e9f3ff;
+  border: 1px solid rgba(22, 132, 255, 0.17);
+  border-radius: 10px;
+}
+.privacy-note svg { width: 24px; fill: none; stroke: #0871dc; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.privacy-note p { margin: 0; font-size: 12px; }
+.application-form {
+  padding: 34px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.application-form > label,
+.field-row label { display: block; margin-bottom: 17px; color: #34445a; font-size: 12px; font-weight: 700; }
+.application-form input,
+.application-form select,
+.application-form textarea {
+  width: 100%;
+  margin-top: 7px;
+  padding: 12px 13px;
+  color: var(--text);
+  background: #f8fafc;
+  border: 1px solid #cdd6e2;
+  border-radius: 7px;
+  outline: none;
+}
+.application-form textarea { resize: vertical; }
+.application-form input:focus,
+.application-form select:focus,
+.application-form textarea:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(22, 132, 255, 0.1); }
+.application-form fieldset { margin: 0 0 18px; padding: 0; border: 0; }
+.application-form legend { margin-bottom: 9px; color: #34445a; font-size: 12px; font-weight: 700; }
+.checkbox-row { display: flex; flex-wrap: wrap; gap: 10px; }
+.checkbox-row label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 12px;
+  color: #43536a;
+  background: #f8fafc;
+  border: 1px solid #d4dce7;
+  border-radius: 7px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.checkbox-row input,
+.consent input { width: auto; margin: 0; accent-color: var(--blue); }
+.application-form .consent {
+  display: grid;
+  grid-template-columns: 17px 1fr;
+  gap: 9px;
+  align-items: start;
+  margin: 4px 0 18px;
+  font-weight: 500;
+  line-height: 1.45;
+}
+.application-button { width: 100%; }
+.form-note { display: block; margin-top: 10px; color: var(--muted); font-size: 10px; text-align: center; }
+
 .contact { color: var(--white); background: #0c75e8; }
 .contact-inner { min-height: 310px; display: grid; grid-template-columns: 1fr 1fr; gap: 8vw; align-items: center; padding-block: 60px; }
 .contact .eyebrow { color: #d9efff; }
@@ -288,7 +369,6 @@ h2 {
 .footer-inner { display: grid; grid-template-columns: 1fr auto; gap: 22px; align-items: center; }
 .footer-brand { grid-row: span 2; }
 .footer-inner p { margin: 0; font-size: 12px; text-align: right; }
-.photo-credit { color: #718197; font-size: 10px; text-align: right; text-decoration: none; }
 
 @media (max-width: 900px) {
   .menu-button { display: block; }
@@ -310,8 +390,10 @@ h2 {
   .nav-call { text-align: center; }
   .section-grid,
   .section-heading,
+  .application-grid,
   .contact-inner { grid-template-columns: 1fr; gap: 44px; }
-  .section-intro { position: static; }
+  .section-intro,
+  .application-copy { position: static; }
   .service-grid { grid-template-columns: 1fr; }
   .service-card { min-height: 250px; }
   .contact-inner { padding-block: 70px; }
@@ -337,10 +419,11 @@ h2 {
   h2 { font-size: clamp(38px, 12vw, 52px); }
   .opportunity-list article { grid-template-columns: 43px 1fr; gap: 12px; }
   .service-card { padding: 30px 26px; }
+  .application-form { padding: 24px 20px; }
+  .field-row { grid-template-columns: 1fr; gap: 0; }
   .footer-inner { grid-template-columns: 1fr; }
   .footer-brand { grid-row: auto; }
-  .footer-inner p,
-  .photo-credit { text-align: left; }
+  .footer-inner p { text-align: left; }
 }
 
 @media (prefers-reduced-motion: reduce) {
